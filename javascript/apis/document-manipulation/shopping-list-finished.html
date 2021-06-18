@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping list example</title>
     <style>
+      
+      ul {
+        text-decoration: none;
+      }
+      
       li {
         margin-bottom: 10px;
+        text-decoration: none;
       }
 
       li button {
@@ -49,9 +55,14 @@
         listBtn.textContent = 'Delete';
         list.appendChild(listItem);
 
-        listBtn.onclick = function(e) {
+//         listBtn.onclick = function(e) {
+//           list.removeChild(listItem);
+//         }
+        
+        //this also perform the event
+        listBtn.addEventListener('click', (e)=>{
           list.removeChild(listItem);
-        }
+        });
 
         input.focus();
       }
